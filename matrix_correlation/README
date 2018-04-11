@@ -1,0 +1,49 @@
+I590 Computational Methods for High-Throughput Data Assignment 1
+IUPUI SPRING 2014
+By: David Xu
+
+DESCRIPTION
+    This directory contains the Python code for the first assignment in I590
+    Computational methods for high-throughput data. The code was written and
+    tested on a Linux/UNIX-like machine running Python 2.7.*.
+
+REQUIRED PACKAGES
+    Because of the way Python syntax has changed since Python2.6 and older, or
+    in Python 3.*.*, it is likely that SyntaxErrors will be returned if not
+    using Python2.7.
+    
+    The script uses the following standard modules from Python and should not
+    require additional installations:
+        os
+
+    Installation of 3 packages is required before running the script:
+        NumPy
+        SciPy
+        matplotlib
+
+    These can be installed in Ubuntu/Debian using the follow command:
+        sudo apt-get install python-numpy python-scipy python-matplotlib
+
+USAGE
+    All parts of the assignment has been condensed into a single script, which
+    can be run by executing the gencorrelation.py file:
+        ./gencorrelation.py
+
+    The script will first return the correlation matrix of matrix 1 to stdout as
+    a tab-delimited matrix. The heatmap of this correlation matrix will be saved
+    to the working directory as the image 'figure1.png' and displayed on screen.
+    
+    Upon closing the first heatmap, the second correlation matrix of matrix 2
+    will be returned to stdout as a tab-delimited matrix. The heatmap of this
+    correlation matrix will be saved to the working directory as the image
+    'figure2.png' and displayed on screen.
+
+    Upon closing the displayed heatmap, the final correlation matrix between
+    matrices 1 and 2 will be returned to stdout as a tab-delimited matrix, with
+    matrix1 represented as rows and matrix2 represented as columns. Like the
+    first correlation matrix, the heatmap will be saved to the working directory
+    as the image 'figure3.png' and displayed on screen.
+
+RESULTS
+    Results for all three heatmaps and the correlation matrices are provided in
+    the results directory.

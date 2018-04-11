@@ -1,0 +1,68 @@
+I590 Computational Methods for High-Throughput Data Assignment 2
+IUPUI SPRING 2014
+By: David Xu
+
+DESCRIPTION
+    This directory contains the Python code for the second assignment in I590
+    Computational methods for high-throughput data. The code was written and
+    tested on a Linux/UNIX-like machine running Python 2.7.*.
+
+REQUIRED PACKAGES
+    Because of the way Python syntax has changed since Python2.6 and older, or
+    in Python 3.*.*, it is likely that SyntaxErrors will be returned if not
+    using Python2.7.
+    
+    The script uses the following standard modules from Python and should not
+    require additional installations:
+        csv
+        math
+
+    Installation of 2 packages is required before running the script:
+        NumPy
+        SciPy
+
+    These can be installed in Ubuntu/Debian using the follow command:
+        sudo apt-get install python-numpy python-scipy
+
+USAGE
+    All parts of the assignment has been condensed into a single script, which
+    can be run by executing the script:
+        ./gethalflife.py
+
+*******************************************************************************
+    The script first reads the input file into a dictionary data structure.
+    The half-life of each time course is found by first linearizing the
+    expontential data through a natural log transformation. The value of the
+    degradation rate constant is found by calculating the slope of the linear
+    regression of the points. The half life is calculated using this slope.
+
+    Half lifes are averaged for each time course it was successfully calculated
+    in, excluding values of infinity and blank slopes.
+
+RESULTS
+    Results are outputed to the 'results' directory. Example results are also
+    made available in the 'example.results' directory. The entire list of
+    sorted half lifes are outputed to the 'sorted_timecourse.txt' file.
+    
+    The top and bottom 10% of halflifes, excluding genes were the half-life
+    could not be determined, are outputed to the 'top10percent.txt' and
+    'bot10percent.txt' files, respectively.
+
+    Functional analysis results for the top and bottom 10 percents were done
+    using both gProfiler (http://bitt.cs.ut.ee/gprofiler) and GOTermFinder
+    (http://go.princeton/edu/cgi-bin/GOTermFinder). The text delimited outputs
+    from the two webservers are provided in the 'results' directory. Only one
+    deviation was made from the default parameters for each run. In
+    GOTermFinder, the ontology aspects was changed to 'Function' rather than
+    'Process'. In gProfiler, the organism was changed to 'Saccharomyces
+    cerevisiae' rather than 'Homo sapiens.'
+
+    The top 10 percent of genes returned no significant terms in GOTermFinder.
+    The bottom 10 percent of genes returned results for the protein
+    heterodimerization activity, protein dimerization activity, and RNA
+    methyltransferase activity terms in GOTermFinder.
+
+    The top 10 percent of genes returned terms for carbohydrate catalytic
+    processes and metabolic processes in gProfiler. The bottom 10 percent of
+    genes returned terms for nucleus processes related to assembly and
+    organization in gProfiler.

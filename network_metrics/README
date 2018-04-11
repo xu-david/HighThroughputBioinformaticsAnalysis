@@ -1,0 +1,69 @@
+I590 Computational Methods for High-Throughput Data Assignment 5
+IUPUI SPRING 2014
+By: David Xu
+
+DESCRIPTION
+    This directory contains the Python code for the fifth assignment in I590
+    Computational methods for high-throughput data. The code was written and
+    tested on both a Windows machine and a Linux/UNIX-like machine running
+    Python 2.7.*.
+
+REQUIRED PACKAGES
+    Because of the way Python syntax has changed since Python2.6 and older, or
+    in Python 3.*.*, it is likely that SyntaxErrors will be returned if not
+    using Python2.7.
+    
+    The script uses the following module that will be compiled at runtime and
+    should not require additional installations:
+        powerlaw
+
+    Installation of 4 packages is required before running the script:
+        NumPy
+        SciPy
+        matplotlib
+        NetworkX
+
+    These can be installed in Ubuntu/Debian using the follow command:
+        sudo apt-get install python-numpy python-scipy python-matplotlib python-networkx
+
+USAGE
+    All parts of the assignment has been condensed into a single script, which
+    can be run by executing the graph_network.py file:
+        ./graph_network.py
+    - or -
+        python graph_network.py
+    
+    Copies of the input files are provided in the 'input.files' directory. The
+    script first reads the tab delimited PPI network into a NetworkX graph to
+    calculate the node and graph properties. The individual protein lists
+    are then read in to calculate the shortest paths between the nodes.
+
+RESULTS
+    Results are outputted to the 'output.files' directory. Example results are
+    also made available in the 'example.output.files' directory.
+
+    Degree and clustering coefficients of each node from this graph are written
+    to 'node_properties.txt' as a tab-delimited file with headers:
+        Protein Symbol
+        Degree
+        Clustering Coefficient
+
+    The average clustering coefficient is written to std.out as follows:
+        http://networkx.lanl.gov/reference/generated/networkx.algorithms.cluster.average_clustering.html
+
+    The log-log plot of the degree distribution is shown in std.out and a power
+    law is fitted to the distribution of the nodes' degrees.
+
+    The shortest paths within the nodes of both protein lists are written to
+    'list1_shortestpaths.txt' and 'list2_shortestpaths.txt', respectively.
+    Protein IDs that are not in the PPI network are ignored, as well as self
+    edge paths (where protein A has the same ID as protein B) and duplicate
+    edges (an edge (protein A, protein B) and (protein B, protein A)). The
+    text-delimited files have the following headers:
+        Protein Symbol Node 1
+        Protein Symbol Node 2
+        Shortest path
+        Length of shortest path
+
+    The distributions of the lengths of the shortest paths are calculated using
+    a Wilcoxon rank-sum test.

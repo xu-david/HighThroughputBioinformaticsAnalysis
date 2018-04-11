@@ -1,0 +1,43 @@
+I590 Computational Methods for High-Throughput Data Assignment 4
+IUPUI SPRING 2014
+By: David Xu
+
+DESCRIPTION
+    This directory contains the Python code for the fourth assignment in I590
+    Computational methods for high-throughput data. The code was written and
+    tested on a Linux/UNIX-like machine running Python 2.7.*.
+
+REQUIRED PACKAGES
+    Because of the way Python syntax has changed since Python2.6 and older, or
+    in Python 3.*.*, it is likely that SyntaxErrors will be returned if not
+    using Python2.7.
+    
+    The script uses the following standard modules from Python and should not
+    require additional installations:
+        bz2
+        math
+        itertools
+
+USAGE
+    All parts of the assignment has been condensed into a single script, which
+    can be run by executing the script:
+        ./gen_pssm.py
+
+    The script first reads the counts matrix and generates the adjusted
+    frequency matrix and log-odds PSSM. It then reads the *.bz2 file as is and
+	generates the maximum score using a sliding window for each line based on
+	the PSSM.
+
+RESULTS
+    Results are outputted to the 'output.files' directory. Example results are
+    also made available in the 'example.output.files' directory.
+    
+    The adjusted frequency matrix and position-weight matrix are returned in
+	the same format as the initial counts matrix as 'freq_matrix.txt' and
+	'weight_matrix.txt', respectively. The top 30 scoring genes and all rank
+	ordered genes are returned as 'top30_genes.txt' and 'all_genes.txt',
+    respectively. The tab-delimited files columns are provided as the header
+	line of the respective text files and are as follows:
+		Rank
+		Gene ID
+		Maximum PSSM Score

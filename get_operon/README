@@ -1,0 +1,35 @@
+I590 Computational Methods for High-Throughput Data Assignment 3
+IUPUI SPRING 2014
+By: David Xu
+
+DESCRIPTION
+    This directory contains the Python code for the third assignment in I590
+    Computational methods for high-throughput data. The code was written and
+    tested on a Linux/UNIX-like machine running Python 2.7.*.
+
+REQUIRED PACKAGES
+    Because of the way Python syntax has changed since Python2.6 and older, or
+    in Python 3.*.*, it is likely that SyntaxErrors will be returned if not
+    using Python2.7.
+    
+    The script uses the following standard modules from Python and should not
+    require additional installations:
+        gzip
+
+USAGE
+    All parts of the assignment has been condensed into a single script, which
+    can be run by executing the script:
+        ./get_operon.py
+
+    The script first reads each input file into a list of lists of tuples.
+    Operons are assigned based on co-directional genes with intervening
+    distances with less than 50 base-pairs.
+
+RESULTS
+    Results are outputted to the 'output.files' directory. Example results are
+    also made available in the 'example.output.files' directory.
+    
+    Operons are returned on a line by line basis. Each tuple within the list in
+    a line represents an individual gene within that operon. Each tuple is
+    formatted as follows from the data in the original input files:
+        (PID, sequence start, sequence end, strand direction, gene name)
